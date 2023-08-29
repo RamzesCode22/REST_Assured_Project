@@ -81,15 +81,15 @@ class UpdateTaskE2ETest {
 
     private void updateTaskStep() {
         JSONObject updateTask = new JSONObject();
-        updateTask.put("name", "Zmieniam nazwę zadania 123");
-        updateTask.put("description", "Zmieniam opis zadania 123");
+        updateTask.put("name", "Zmieniam nazwę zadania 123456789");
+        updateTask.put("description", "Zmieniam opis zadania 123456789");
 
         final var response = UpdateTaskRequest.updateTask(updateTask, taskId);
         Assertions.assertThat(response.statusCode()).isEqualTo(200);
 
         JsonPath jsonData = response.jsonPath();
-        Assertions.assertThat(jsonData.getString("name")).isEqualTo("Zmieniam nazwę zadania 123");
-        Assertions.assertThat(jsonData.getString("description")).isEqualTo("Zmieniam opis zadania 123");
+        Assertions.assertThat(jsonData.getString("name")).isEqualTo("Zmieniam nazwę zadania 123456789");
+        Assertions.assertThat(jsonData.getString("description")).isEqualTo("Zmieniam opis zadania 123456789");
     }
 
     private void closeTaskStep() {
