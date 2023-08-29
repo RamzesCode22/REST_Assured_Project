@@ -36,8 +36,8 @@ class CreateSpaceWithParamsTest {
 
         return Stream.of(
                 Arguments.of("TEST SPACE"),
-                Arguments.of("123"),
-                Arguments.of("*")
+                Arguments.of("123456789"),
+                Arguments.of("*@#$%&!")
         );
     }
 }
